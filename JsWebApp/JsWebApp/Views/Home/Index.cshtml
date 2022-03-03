@@ -1,11 +1,24 @@
-﻿@{
+﻿@using JsWebApp.Model
+@{
     ViewData["Title"] = "Home Page";
+}
+@model IList<Car>
+@foreach (var item in Model) {
+    <tr>
+        <td>test:
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+    </tr>
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
 
 <table id="apiTable">
     <thead>
@@ -38,4 +51,4 @@
             }
         };
     }
-</script> 
+</script>

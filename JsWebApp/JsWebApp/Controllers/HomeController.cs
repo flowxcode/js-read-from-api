@@ -15,7 +15,10 @@ namespace JsWebApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var sql = new SqlConnector();
+            var cars = sql.ReadCarData(); // returns a list of cars
+
+            return View(cars);
         }
 
         public IActionResult Privacy()
